@@ -6,7 +6,6 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import ServiceDetail from './pages/ServiceDetail';
 import Gallery from './pages/Gallery';
-import Products from './pages/Products';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -52,18 +51,18 @@ const App: React.FC = () => {
     <HelmetProvider>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Router>
+        <BrowserRouter basename="/prolocksmith-elite">
           <ScrollToTop />
           <Layout>
-            <BrowserRouter basename="/prolocksmith-elite">
+            <Routes >
               <Route path="/" element={<Home />} />
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/gallery" element={<Gallery />} />
               {/* <Route path="/products" element={<Products />} /> */}
               <Route path="/contact" element={<Contact />} />
-            </BrowserRouter>
+            </Routes>
           </Layout>
-        </Router>
+        </BrowserRouter>
       </ThemeProvider>
     </HelmetProvider>
   );
