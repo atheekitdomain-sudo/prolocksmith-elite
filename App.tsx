@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
@@ -55,13 +55,13 @@ const App: React.FC = () => {
         <Router>
           <ScrollToTop />
           <Layout>
-            <Routes>
+            <BrowserRouter basename="/prolocksmith-elite">
               <Route path="/" element={<Home />} />
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/gallery" element={<Gallery />} />
               {/* <Route path="/products" element={<Products />} /> */}
               <Route path="/contact" element={<Contact />} />
-            </Routes>
+            </BrowserRouter>
           </Layout>
         </Router>
       </ThemeProvider>
